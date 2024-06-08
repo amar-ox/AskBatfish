@@ -1,0 +1,778 @@
+{
+    "routingTables": {
+        "questions": [
+            {
+                "question": "How can I return the routing tables?",
+                "invocation": "result = bf.q.routes().answer().frame()"
+            },
+            {
+                "question": "How can I show routes for a specific RIB, VRF, and node?",
+                "invocation": "result = bf.q.routes(nodes=node_name, vrfs=vrf_name, ribs=rib_name).answer().frame()"
+            },
+            {
+                "question": "How can I return routes for networks matching a specific prefix?",
+                "invocation": "result = bf.q.routes(network='network_prefix').answer().frame()"
+            },
+            {
+                "question": "How can I use a specific prefix matching criterion for routes?",
+                "invocation": "result = bf.q.routes(prefixMatchType='LONGEST_PREFIX_MATCH').answer().frame()"
+            },
+            {
+                "question": "How can I return routes for protocols matching a specific specifier?",
+                "invocation": "result = bf.q.routes(protocols='protocol_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I return routes on VRFs matching a specific name or regex?",
+                "invocation": "result = bf.q.routes(vrfs='vrf_name').answer().frame()"
+            },
+            {
+                "question": "How can I return routes from a given protocol RIB?",
+                "invocation": "result = bf.q.routes(rib='protocol_rib').answer().frame()"
+            },
+            {
+                "question": "How can I return routes in the BGP RIB?",
+                "invocation": "result = bf.q.bgpRib().answer().frame()"
+            },
+            {
+                "question": "How can I show BGP routes for a specific VRF and node?",
+                "invocation": "result = bf.q.bgpRib().answer().frame()"
+            },
+            {
+                "question": "How can I examine BGP routes on nodes matching a specific specifier?",
+                "invocation": "result = bf.q.bgpRib(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I examine BGP routes for networks matching a specific prefix?",
+                "invocation": "result = bf.q.bgpRib(network='network_prefix').answer().frame()"
+            },
+            {
+                "question": "How can I use a specific prefix matching criterion for BGP routes?",
+                "invocation": "result = bf.q.bgpRib(prefixMatchType='LONGEST_PREFIX_MATCH').answer().frame()"
+            },
+            {
+                "question": "How can I examine BGP routes on VRFs matching a specific name or regex?",
+                "invocation": "result = bf.q.bgpRib(vrfs='vrf_name').answer().frame()"
+            },
+            {
+                "question": "How can I examine BGP routes whose status matches a specific specifier?",
+                "invocation": "result = bf.q.bgpRib(status='route_status').answer().frame()"
+            },
+            {
+                "question": "How can I return routes in the EVPN RIB?",
+                "invocation": "result = bf.q.evpnRib().answer().frame()"
+            },
+            {
+                "question": "How can I show EVPN routes for a specific VRF and node?",
+                "invocation": "result = bf.q.evpnRib().answer().frame()"
+            },
+            {
+                "question": "How can I examine EVPN routes on nodes matching a specific specifier?",
+                "invocation": "result = bf.q.evpnRib(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I examine EVPN routes for networks matching a specific prefix?",
+                "invocation": "result = bf.q.evpnRib(network='network_prefix').answer().frame()"
+            },
+            {
+                "question": "How can I use a specific prefix matching criterion for EVPN routes?",
+                "invocation": "result = bf.q.evpnRib(prefixMatchType='LONGEST_PREFIX_MATCH').answer().frame()"
+            },
+            {
+                "question": "How can I examine EVPN routes on VRFs matching a specific name or regex?",
+                "invocation": "result = bf.q.evpnRib(vrfs='vrf_name').answer().frame()"
+            },
+            {
+                "question": "How can I return routes that are longest prefix match for a given IP address?",
+                "invocation": "result = bf.q.lpmRoutes(ip='2.34.201.10').answer().frame()"
+            },
+            {
+                "question": "How can I return longest prefix match routes for a given IP in the RIBs of specified nodes and VRFs?",
+                "invocation": "result = bf.q.lpmRoutes(ip='2.34.201.10').answer().frame()"
+            },
+            {
+                "question": "How can I examine longest prefix match routes on nodes matching a specific specifier?",
+                "invocation": "result = bf.q.lpmRoutes(ip='2.34.201.10', nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I examine longest prefix match routes on VRFs matching a specific name or regex?",
+                "invocation": "result = bf.q.lpmRoutes(ip='2.34.201.10', vrfs='vrf_name').answer().frame()"
+            }
+        ]
+    },
+    "topology": {
+        "questions": [
+            {
+                "question": "How can I return the normalized Layer 1 edges input to Batfish?",
+                "invocation": "result = bf.q.userProvidedLayer1Edges().answer().frame()"
+            },
+            {
+                "question": "How can I list Layer 1 edges with potentially normalized node and interface names?",
+                "invocation": "result = bf.q.userProvidedLayer1Edges().answer().frame()"
+            },
+            {
+                "question": "How can I include Layer 1 edges whose first node matches a specific name or regex?",
+                "invocation": "result = bf.q.userProvidedLayer1Edges(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I include Layer 1 edges whose second node matches a specific name or regex?",
+                "invocation": "result = bf.q.userProvidedLayer1Edges(remoteNodes='remote_node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I return all Layer 3 links in the network?",
+                "invocation": "result = bf.q.layer3Edges().answer().frame()"
+            },
+            {
+                "question": "How can I list all Layer 3 edges in the network?",
+                "invocation": "result = bf.q.layer3Edges().answer().frame()"
+            },
+            {
+                "question": "How can I include Layer 3 edges whose first node matches a specific name or regex?",
+                "invocation": "result = bf.q.layer3Edges(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I include Layer 3 edges whose second node matches a specific name or regex?",
+                "invocation": "result = bf.q.layer3Edges(remoteNodes='remote_node_specifier').answer().frame()"
+            }
+        ]
+    },
+    "configProperties": {
+        "questions": [
+            {
+                "question": "How can I return configuration settings of nodes?",
+                "invocation": "result = bf.q.nodeProperties().answer().frame()"
+            },
+            {
+                "question": "How can I list node properties for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.nodeProperties(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I list node properties matching a specific regex?",
+                "invocation": "result = bf.q.nodeProperties(properties='property_regex').answer().frame()"
+            },
+            {
+                "question": "How can I return configuration settings of interfaces?",
+                "invocation": "result = bf.q.interfaceProperties().answer().frame()"
+            },
+            {
+                "question": "How can I list interface properties for interfaces matching a specific name or regex?",
+                "invocation": "result = bf.q.interfaceProperties(interfaces='interface_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I list interface properties matching a specific regex?",
+                "invocation": "result = bf.q.interfaceProperties(properties='property_regex').answer().frame()"
+            },
+            {
+                "question": "How can I return configuration settings of BGP processes?",
+                "invocation": "result = bf.q.bgpProcessConfiguration().answer().frame()"
+            },
+            {
+                "question": "How can I list BGP process properties for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.bgpProcessConfiguration(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I list BGP process properties matching a specific regex?",
+                "invocation": "result = bf.q.bgpProcessConfiguration(properties='property_regex').answer().frame()"
+            },
+            {
+                "question": "How can I return configuration settings for BGP peerings?",
+                "invocation": "result = bf.q.bgpPeerConfiguration().answer().frame()"
+            },
+            {
+                "question": "How can I list BGP peer properties for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.bgpPeerConfiguration(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I list BGP peer properties matching a specific regex?",
+                "invocation": "result = bf.q.bgpPeerConfiguration(properties='property_regex').answer().frame()"
+            },
+            {
+                "question": "How can I return configuration settings of HSRP groups?",
+                "invocation": "result = bf.q.hsrpProperties().answer().frame()"
+            },
+            {
+                "question": "How can I list HSRP properties for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.hsrpProperties(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I list HSRP properties for interfaces matching a specific name or regex?",
+                "invocation": "result = bf.q.hsrpProperties(interfaces='interface_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I return configuration parameters for OSPF routing processes?",
+                "invocation": "result = bf.q.ospfProcessConfiguration().answer().frame()"
+            },
+            {
+                "question": "How can I list OSPF process properties for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.ospfProcessConfiguration(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I list OSPF process properties matching a specific regex?",
+                "invocation": "result = bf.q.ospfProcessConfiguration(properties='property_regex').answer().frame()"
+            },
+            {
+                "question": "How can I return OSPF configuration of interfaces?",
+                "invocation": "result = bf.q.ospfInterfaceConfiguration().answer().frame()"
+            },
+            {
+                "question": "How can I list OSPF interface properties for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.ospfInterfaceConfiguration(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I list OSPF interface properties matching a specific regex?",
+                "invocation": "result = bf.q.ospfInterfaceConfiguration(properties='property_regex').answer().frame()"
+            },
+            {
+                "question": "How can I return configuration parameters of OSPF areas?",
+                "invocation": "result = bf.q.ospfAreaConfiguration().answer().frame()"
+            },
+            {
+                "question": "How can I list OSPF area properties for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.ospfAreaConfiguration(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I return MLAG configuration?",
+                "invocation": "result = bf.q.mlagProperties().answer().frame()"
+            },
+            {
+                "question": "How can I list MLAG properties for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.mlagProperties(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I list MLAG properties for MLAG IDs matching a specific name or regex?",
+                "invocation": "result = bf.q.mlagProperties(mlagIds='mlag_id_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I return where IP addresses are attached in the network?",
+                "invocation": "result = bf.q.ipOwners().answer().frame()"
+            },
+            {
+                "question": "How can I list IP owners for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.ipOwners(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I return named structure definitions?",
+                "invocation": "result = bf.q.namedStructures().answer().frame()"
+            },
+            {
+                "question": "How can I list named structures for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.namedStructures(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I list named structures of a specific type?",
+                "invocation": "result = bf.q.namedStructures(structureTypes='structure_type').answer().frame()"
+            },
+            {
+                "question": "How can I list named structures matching a specific name or regex?",
+                "invocation": "result = bf.q.namedStructures(structureNames='structure_name_regex').answer().frame()"
+            },
+            {
+                "question": "How can I return structures defined in the network?",
+                "invocation": "result = bf.q.definedStructures().answer().frame()"
+            },
+            {
+                "question": "How can I list defined structures for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.definedStructures(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I list defined structures matching a specific name or regex?",
+                "invocation": "result = bf.q.definedStructures(names='structure_name_regex').answer().frame()"
+            },
+            {
+                "question": "How can I list defined structures of a specific type?",
+                "invocation": "result = bf.q.definedStructures(types='structure_type').answer().frame()"
+            },
+            {
+                "question": "How can I list the references in configuration files to vendor-specific structures?",
+                "invocation": "result = bf.q.referencedStructures().answer().frame()"
+            },
+            {
+                "question": "How can I list referenced structures for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.referencedStructures(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I list referenced structures matching a specific name or regex?",
+                "invocation": "result = bf.q.referencedStructures(names='structure_name_regex').answer().frame()"
+            },
+            {
+                "question": "How can I list referenced structures of a specific type?",
+                "invocation": "result = bf.q.referencedStructures(types='structure_type').answer().frame()"
+            },
+            {
+                "question": "How can I identify undefined references in configuration?",
+                "invocation": "result = bf.q.undefinedReferences().answer().frame()"
+            },
+            {
+                "question": "How can I list undefined references for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.undefinedReferences(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I return nodes with structures that are defined but not used?",
+                "invocation": "result = bf.q.unusedStructures().answer().frame()"
+            },
+            {
+                "question": "How can I list unused structures for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.unusedStructures(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I return configuration settings of switched VLANs?",
+                "invocation": "result = bf.q.switchedVlanProperties().answer().frame()"
+            },
+            {
+                "question": "How can I list VLAN properties for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.switchedVlanProperties(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I list VLAN properties for interfaces matching a specific name or regex?",
+                "invocation": "result = bf.q.switchedVlanProperties(interfaces='interface_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I return configuration settings of VRRP groups?",
+                "invocation": "result = bf.q.vrrpProperties().answer().frame()"
+            },
+            {
+                "question": "How can I list VRRP properties for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.vrrpProperties(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I list VRRP properties for interfaces matching a specific name or regex?",
+                "invocation": "result = bf.q.vrrpProperties(interfaces='interface_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I return Virtual Server configuration of A10 devices?",
+                "invocation": "result = bf.q.a10VirtualServerConfiguration().answer().frame()"
+            },
+            {
+                "question": "How can I list A10 virtual server configuration for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.a10VirtualServerConfiguration(nodes='node_specifier').answer().frame()"
+            },
+            {
+                "question": "How can I return VIP configuration of F5 BIG-IP devices?",
+                "invocation": "result = bf.q.f5BigipVipConfiguration().answer().frame()"
+            },
+            {
+                "question": "How can I list F5 VIP configuration for nodes matching a specific name or regex?",
+                "invocation": "result = bf.q.f5BigipVipConfiguration(nodes='node_specifier').answer().frame()"
+            }
+        ]
+    },
+    "filters": {
+        "questions": [
+            {
+                "question": "How can I find unreachable lines in filters (ACLs and firewall rules)?",
+                "invocation": "result = bf.q.filterLineReachability().answer().frame()"
+            },
+            {
+                "question": "Which flows are denied by the 'acl_in' filter for source IP 10.10.10.0/24 and destination IP 218.8.104.58 for DNS traffic?",
+                "invocation": "result = bf.q.searchFilters(headers=HeaderConstraints(srcIps='10.10.10.0/24', dstIps='218.8.104.58', applications=['dns']), action='deny', filters='acl_in').answer().frame()"
+            },
+            {
+                "question": "How is the flow with source IP 10.10.10.1 and destination IP 218.8.104.58 for DNS traffic processed by the 'acl_in' filter on 'rtr-with-acl'?",
+                "invocation": "result = bf.q.testFilters(headers=HeaderConstraints(srcIps='10.10.10.1', dstIps='218.8.104.58', applications=['dns']), nodes='rtr-with-acl', filters='acl_in').answer().frame()"
+            },
+            {
+                "question": "Which lines in the filters match DNS traffic?",
+                "invocation": "result = bf.q.findMatchingFilterLines(headers=HeaderConstraints(applications='DNS')).answer().frame()"
+            },
+            {
+                "question": "Does the SNMP community 'COMM' permit the client IP 1.2.3.4/32?",
+                "invocation": "result = bf.q.snmpCommunityClients(community='COMM', clients='1.2.3.4/32').answer().frame()"
+            }
+        ]
+    },
+    "forwarding": {
+        "questions": [
+            {
+                "question": "How can I trace the path(s) for a specific flow?",
+                "invocation": "result = bf.q.traceroute(startLocation='@enter(as2border1[GigabitEthernet2/0])', headers=HeaderConstraints(dstIps='2.34.201.10', srcIps='8.8.8.8')).answer().frame()"
+            },
+            {
+                "question": "How can I trace the path(s) for a specific flow in both directions?",
+                "invocation": "result = bf.q.bidirectionalTraceroute(startLocation='@enter(as2border1[GigabitEthernet2/0])', headers=HeaderConstraints(dstIps='2.34.201.10', srcIps='8.8.8.8')).answer().frame()"
+            },
+            {
+                "question": "Which flows match the specified path and header space conditions and are successfully delivered?",
+                "invocation": "result = bf.q.reachability(pathConstraints=PathConstraints(startLocation = '/as2/'), headers=HeaderConstraints(dstIps='host1', srcIps='0.0.0.0/0', applications='DNS'), actions='SUCCESS').answer().frame()"
+            },
+            {
+                "question": "Which flows can successfully travel to a destination and receive a response?",
+                "invocation": "result = bf.q.bidirectionalReachability(pathConstraints=PathConstraints(startLocation = '/as2dist1/'), headers=HeaderConstraints(dstIps='host1', srcIps='0.0.0.0/0', applications='DNS'), returnFlowType='SUCCESS').answer().frame()"
+            },
+            {
+                "question": "How can I detect forwarding loops in the network?",
+                "invocation": "result = bf.q.detectLoops().answer().frame()"
+            },
+            {
+                "question": "How can I validate multipath consistency between all pairs of subnets?",
+                "invocation": "result = bf.q.subnetMultipathConsistency().answer().frame()"
+            },
+            {
+                "question": "How can I validate multipath consistency between all pairs of router loopbacks?",
+                "invocation": "result = bf.q.loopbackMultipathConsistency().answer().frame()"
+            }
+        ]
+    },
+    "routingProtocols": {
+        "questions": [
+            {
+                "question": "What is the compatibility of configured BGP sessions?",
+                "invocation": "result = bf.q.bgpSessionCompatibility().answer().frame()"
+            },
+            {
+                "question": "What is the status of configured BGP sessions?",
+                "invocation": "result = bf.q.bgpSessionStatus().answer().frame()"
+            },
+            {
+                "question": "What are the BGP adjacencies in the network?",
+                "invocation": "result = bf.q.bgpEdges().answer().frame()"
+            },
+            {
+                "question": "What are the compatible OSPF sessions in the network?",
+                "invocation": "result = bf.q.ospfSessionCompatibility().answer().frame()"
+            },
+            {
+                "question": "What are the OSPF adjacencies in the network?",
+                "invocation": "result = bf.q.ospfEdges().answer().frame()"
+            },
+            {
+                "question": "How is a specified route processed through the specified routing policies?",
+                "invocation": "result = bf.q.testRoutePolicies(policies='/as1_to_/', direction='in', inputRoutes=list([BgpRoute(network='10.0.0.0/24', originatorIp='4.4.4.4', originType='egp', protocol='bgp', asPath=[[64512, 64513], [64514]], communities=['64512:42', '64513:21'])])).answer().frame()"
+            },
+            {
+                "question": "Find route announcements for which a route policy has a particular behavior.",
+                "invocation": "result = bf.q.searchRoutePolicies(nodes='/^as1/', policies='/as1_to_/', inputConstraints=BgpRouteConstraints(prefix=[\"10.0.0.0/8:8-32\", \"172.16.0.0/28:28-32\", \"192.168.0.0/16:16-32\"]), action='permit').answer().frame()"
+            }
+        ]
+    },
+    "ipsec": {
+        "questions": [
+            {
+                "question": "How can I get the status of IPSec sessions?",
+                "invocation": "result = bf.q.ipsecSessionStatus().answer().frame()"
+            },
+            {
+                "question": "What are the configured IPSec sessions in my network?",
+                "invocation": "result = bf.q.ipsecSessionStatus().answer().frame()"
+            },
+            {
+                "question": "Can I see the first 5 rows of the IPSec session status?",
+                "invocation": "result = bf.q.ipsecSessionStatus().answer().frame().head(5)"
+            },
+            {
+                "question": "How do I display the first row of the IPSec session status?",
+                "invocation": "result = bf.q.ipsecSessionStatus().answer().frame().iloc[0]"
+            },
+            {
+                "question": "What is the status of IPSec sessions for a specific node?",
+                "invocation": "result = bf.q.ipsecSessionStatus(nodes='node_name').answer().frame()"
+            },
+            {
+                "question": "What is the status of IPSec sessions for a specific remote node?",
+                "invocation": "result = bf.q.ipsecSessionStatus(remoteNodes='remote_node_name').answer().frame()"
+            },
+            {
+                "question": "How can I filter IPSec sessions by status?",
+                "invocation": "result = bf.q.ipsecSessionStatus(status='status_specifier').answer().frame()"
+            },
+            {
+                "question": "How do I list all IPSec tunnels in the network?",
+                "invocation": "result = bf.q.ipsecEdges().answer().frame()"
+            },
+            {
+                "question": "Can I see the first 5 rows of the IPSec tunnels?",
+                "invocation": "result = bf.q.ipsecEdges().answer().frame().head(5)"
+            },
+            {
+                "question": "How do I display the first row of the IPSec tunnels?",
+                "invocation": "result = bf.q.ipsecEdges().answer().frame().iloc[0]"
+            },
+            {
+                "question": "What are the IPSec tunnels for a specific node?",
+                "invocation": "result = bf.q.ipsecEdges(nodes='node_name').answer().frame()"
+            },
+            {
+                "question": "What are the IPSec tunnels for a specific remote node?",
+                "invocation": "result = bf.q.ipsecEdges(remoteNodes='remote_node_name').answer().frame()"
+            }
+        ]
+    },
+    "vxlan_evpn": {
+        "questions": [
+            {
+                "question": "How can I get the configuration settings of VXLANs?",
+                "invocation": "result = bf.q.vxlanVniProperties().answer().frame()"
+            },
+            {
+                "question": "How can I list VNI-level network segment settings configured for VXLANs?",
+                "invocation": "result = bf.q.vxlanVniProperties().answer().frame()"
+            },
+            {
+                "question": "How can I get VXLAN VNI properties for specific nodes?",
+                "invocation": "result = bf.q.vxlanVniProperties(nodes='<NodeSpec>').answer().frame()"
+            },
+            {
+                "question": "How can I get VXLAN VNI properties with specific properties?",
+                "invocation": "result = bf.q.vxlanVniProperties(properties='<VxlanVniPropertySpec>').answer().frame()"
+            },
+            {
+                "question": "How can I list all VXLAN edges in the network?",
+                "invocation": "result = bf.q.vxlanEdges().answer().frame()"
+            },
+            {
+                "question": "How can I get VXLAN edges for specific nodes?",
+                "invocation": "result = bf.q.vxlanEdges(nodes='<NodeSpec>').answer().frame()"
+            },
+            {
+                "question": "How can I get VXLAN edges for specific remote nodes?",
+                "invocation": "result = bf.q.vxlanEdges(remoteNodes='<NodeSpec>').answer().frame()"
+            },
+            {
+                "question": "How can I get configuration settings of L3 EVPN VNIs?",
+                "invocation": "result = bf.q.evpnL3VniProperties().answer().frame()"
+            },
+            {
+                "question": "How can I list VNI-level network segment settings configured for L3 EVPN?",
+                "invocation": "result = bf.q.evpnL3VniProperties().answer().frame()"
+            },
+            {
+                "question": "How can I get L3 EVPN VNI properties for specific nodes?",
+                "invocation": "result = bf.q.evpnL3VniProperties(nodes='<NodeSpec>').answer().frame()"
+            }
+        ]
+    },
+    "analysis": {
+        "questions": [
+            {
+                "question": "How can I test if a host in a subnet can reach a DNS server?",
+                "invocation": "dns_flow = HeaderConstraints(srcIps='10.10.10.1', dstIps='218.8.104.58', applications=['dns'])\nanswer = bf.q.testFilters(headers=dns_flow, nodes='rtr-with-acl', filters='acl_in').answer().frame()"
+            },
+            {
+                "question": "How can I test if HTTP flows are blocked from one zone to another?",
+                "invocation": "http_flow = HeaderConstraints(srcIps='10.114.64.1', dstIps='10.114.60.10', applications=['http'])\nanswer = bf.q.testFilters(headers=http_flow, startLocation='@enter(firewall[GigabitEthernet0/0/2])', filters='@out(GigabitEthernet0/0/3)').answer().frame()"
+            },
+            {
+                "question": "How can I verify that all hosts in a subnet can reach a DNS server?",
+                "invocation": "dns_traffic = HeaderConstraints(srcIps='10.10.10.0/24', dstIps='218.8.104.58', applications=['dns'])\nanswer = bf.q.searchFilters(headers=dns_traffic, action='deny', filters='acl_in').answer().frame()"
+            },
+            {
+                "question": "How can I verify that only NFS traffic can go from one zone to another?",
+                "invocation": "non_nfs_tcp_traffic = HeaderConstraints(srcIps='101.164.101.231', dstIps='101.164.9.0/24', ipProtocols=['tcp'], dstPorts='!2049')\nanswer = bf.q.searchFilters(headers=non_nfs_tcp_traffic, startLocation='@enter(firewall[GigabitEthernet0/0/2])', filters='@out(GigabitEthernet0/0/3)', action='permit').answer().frame()"
+            },
+            {
+                "question": "How can I find unreachable lines in filters of a specific router?",
+                "invocation": "aclAns = bf.q.filterLineReachability(nodes='rtr-with-acl').answer().frame().sort_values(by='Unreachable_Line')"
+            },
+            {
+                "question": "How can I test how a route policy treats a specific route?",
+                "invocation": "from pybatfish.datamodel.route import BgpRoute\ninRoute1 = BgpRoute(network='10.0.0.0/24', originatorIp='4.4.4.4', originType='egp', protocol='bgp')\nresult = bf.q.testRoutePolicies(policies='from_customer', direction='in', inputRoutes=[inRoute1]).answer().frame()\n"
+            },
+            {
+                "question": "How can I ensure that all private addresses are denied by an in-bound route policy?",
+                "invocation": "from pybatfish.datamodel.route import BgpRouteConstraints\nprivateIps = ['10.0.0.0/8:8-32', '172.16.0.0/12:12-32', '192.168.0.0/16:16-32']\ninRoutes1 = BgpRouteConstraints(prefix=privateIps)\nresult = bf.q.searchRoutePolicies(policies='from_customer', inputConstraints=inRoutes1, action='permit').answer().frame()\n"
+            },
+            {
+                "question": "How can I verify that a route policy denies announcements that do not originate from a specific AS?",
+                "invocation": "knownPrefixes = '5.5.5.0/24:24-32'\nbadOrigin = '!/( |^)44$/'\ninRoutes2 = BgpRouteConstraints(prefix=knownPrefixes, asPath=badOrigin)\nresult = bf.q.searchRoutePolicies(policies='from_customer', inputConstraints=inRoutes2, action='permit').answer().frame()\n"
+            },
+            {
+                "question": "How can I test if a route policy tags each permitted route with a specific community and sets the local preference?",
+                "invocation": "inRoute3 = BgpRoute(network='2.0.0.0/8', originatorIp='4.4.4.4', originType='egp', protocol='bgp')\nresult = bf.q.testRoutePolicies(policies='from_customer', direction='in', inputRoutes=[inRoute3]).answer().frame()\n"
+            },
+            {
+                "question": "How can I check if a permitted route is not tagged with a specific community?",
+                "invocation": "outRoutes3a = BgpRouteConstraints(communities='!20:30')\nresult = bf.q.searchRoutePolicies(policies='from_customer', action='permit', outputConstraints=outRoutes3a).answer().frame()\n"
+            },
+            {
+                "question": "How can I verify that all permitted routes have a specific local preference?",
+                "invocation": "outRoutes3b = BgpRouteConstraints(localPreference='!300')\nresult = bf.q.searchRoutePolicies(nodes='border2', policies='from_customer', action='permit', outputConstraints=outRoutes3b).answer().frame()\n"
+            },
+            {
+                "question": "How can I validate that a route policy allows all addresses we own to be advertised?",
+                "invocation": "ownedSpace = ['1.2.3.0/24:24-32', '1.2.4.0/24:24-32']\ninRoutes4 = BgpRouteConstraints(prefix=ownedSpace)\nresult = bf.q.searchRoutePolicies(policies='to_provider', inputConstraints=inRoutes4, action='deny').answer().frame()\n"
+            },
+            {
+                "question": "How can I ensure that a route policy advertises all customer routes?",
+                "invocation": "customerCommunities = '20:30'\ninRoutes5 = BgpRouteConstraints(communities=customerCommunities)\nresult = bf.q.searchRoutePolicies(policies='to_provider', inputConstraints=inRoutes5, action='deny').answer().frame()\n"
+            },
+            {
+                "question": "How can I check that a route policy does not advertise any routes other than the ones we own and the ones our customers own?",
+                "invocation": "ownedSpace = ['1.2.3.0/24:24-32', '1.2.4.0/24:24-32']\ninRoutes6 = BgpRouteConstraints(prefix=ownedSpace, complementPrefix=True, communities='!20:30')\nresult = bf.q.searchRoutePolicies(policies='to_provider', inputConstraints=inRoutes6, action='permit').answer().frame()\n"
+            },
+            {
+                "question": "How can I simulate a failure of a node in Pybatfish?",
+                "invocation": "FAIL_LONDON_SNAPSHOT_NAME = \"fail_london\"\nbf.fork_snapshot(BASE_SNAPSHOT_NAME, FAIL_LONDON_SNAPSHOT_NAME, deactivate_nodes=[\"london\"], overwrite=True)\n"
+            },
+            {
+                "question": "How can I simulate interface failures in Pybatfish?",
+                "invocation": "FAIL_SNAPSHOT_NAME = \"fail_snapshot\"\nbf.fork_snapshot(BASE_SNAPSHOT_NAME, FAIL_SNAPSHOT_NAME, deactivate_interfaces=[\"interface1\", \"interface2\"], overwrite=True)\n"
+            },
+            {
+                "question": "How can I view defined route-map structures on a specific node in Pybatfish?",
+                "invocation": "bf.q.definedStructures(types='route-map', nodes=\"hongkong\").answer()\n"
+            },
+            {
+                "question": "How can I view specific lines of a configuration file in Pybatfish?",
+                "invocation": "!cat networks/failure-analysis/configs/hongkong.cfg | head -121 | tail -4\n"
+            },
+            {
+                "question": "How can I check the definition of an access list in Pybatfish?",
+                "invocation": "!cat networks/failure-analysis/configs/hongkong.cfg | head -118 | tail -5\n"
+            },
+            {
+                "question": "How can I perform a traceroute from as3core1 to host1?",
+                "invocation": "headers = HeaderConstraints(dstIps='host1')\ntracert = bf.q.traceroute(startLocation=\"as3core1[Loopback0]\", headers=headers).answer().frame()"
+            },
+            {
+                "question": "How can I get detailed information about the first trace in the traceroute results?",
+                "invocation": "tracert['Traces'][0][0]"
+            },
+            {
+                "question": "How do I get the detailed information about the final hop of the first trace?",
+                "invocation": "last_hop = tracert['Traces'][0][0].hops[-1]\nrepr(last_hop)"
+            },
+            {
+                "question": "How do I search for DNS flows that reach the DNS server within AS2?",
+                "invocation": "path = PathConstraints(startLocation=\"/as2/\")\nheaders = HeaderConstraints(srcIps=\"0.0.0.0/0\", dstIps=\"host1\", applications=\"DNS\")\nreach = bf.q.reachability(pathConstraints=path, headers=headers, actions=\"success\").answer().frame()"
+            },
+            {
+                "question": "How do I verify that the DNS server is available everywhere inside AS2?",
+                "invocation": "path = PathConstraints(startLocation=\"/as2/\")\nheaders = HeaderConstraints(dstIps=\"host1\", applications=\"DNS\")\nreach = bf.q.reachability(pathConstraints=path, headers=headers, actions=\"failure\").answer().frame()"
+            },
+            {
+                "question": "How can I verify that no UDP traffic except DNS is accessible on host1?",
+                "invocation": "path = PathConstraints(startLocation=\"/as2/\")\nheaders = HeaderConstraints(srcIps=\"0.0.0.0/0\", dstIps=\"host1\", ipProtocols=\"UDP\", dstPorts=\"!53\")\nreach = bf.q.reachability(pathConstraints=path, headers=headers, actions=\"accepted\").answer().frame()"
+            },
+            {
+                "question": "How can I verify that the DNS server is not reachable from anywhere outside AS2?",
+                "invocation": "path = PathConstraints(startLocation=\"@enter(/as2border/[GigabitEthernet0/0])\")\nheaders = HeaderConstraints(srcIps=\"0.0.0.0/0\", dstIps=\"host1\", applications=\"DNS\")\nreach = bf.q.reachability(pathConstraints=path, headers=headers, actions=\"success\").answer().frame()"
+            },
+            {
+                "question": "How do I find flows with multipath routing inconsistencies?",
+                "invocation": "multipath = bf.q.multipathConsistency().answer().frame()\nfirst_result = multipath.head(1)"
+            },
+            {
+                "question": "How can I verify that no traffic is routed through a specific router using Batfish?",
+                "invocation": "answer = bf.q.reachability(pathConstraints=PathConstraints(startLocation=\"@enter(/border/[GigabitEthernet0/0])\", transitLocations=\"core1\"), headers=HeaderConstraints(dstIps=\"/host/\"), actions=\"SUCCESS,FAILURE\").answer(snapshot=CHANGE1_NAME).frame()"
+            },
+            {
+                "question": "How can I compare the forwarding behavior of two snapshots to ensure reachability is unchanged?",
+                "invocation": "answer = bf.q.differentialReachability(pathConstraints=PathConstraints(startLocation=\"@enter(/border/[GigabitEthernet0/0])\"), headers=HeaderConstraints(dstIps=\"/host/\")).answer(snapshot=CHANGE1_NAME, reference_snapshot=BASE_NAME).frame()"
+            },
+            {
+                "question": "How can I verify that HTTP traffic can reach a specific host using Batfish?",
+                "invocation": "answer = bf.q.traceroute(startLocation=\"@enter(/border/[GigabitEthernet0/0])\", headers=HeaderConstraints(dstIps=\"host-www\", applications=\"HTTP\")).answer().frame()"
+            },
+            {
+                "question": "How can I ensure all HTTP traffic can reach a specific host and verify the intended change?",
+                "invocation": "answer = bf.q.reachability(pathConstraints=PathConstraints(startLocation=\"@enter(/border/[GigabitEthernet0/0])\"), headers=HeaderConstraints(dstIps=\"host-www\", srcIps=\"0.0.0.0/0\", applications=\"HTTP\"), actions=\"FAILURE\").answer(snapshot=CHANGE2_NAME).frame()"
+            },
+            {
+                "question": "How can I verify that no unintended traffic changes occurred after making a change?",
+                "invocation": "answer = bf.q.differentialReachability(pathConstraints=PathConstraints(startLocation=\"@enter(/border/[GigabitEthernet0/0])\"), headers=HeaderConstraints(dstIps=\"host-www\", applications=\"HTTP\"), invertSearch=True).answer(snapshot=CHANGE2_NAME, reference_snapshot=BASE_NAME).frame()"
+            },
+            {
+                "question": "How do I get routing tables for all nodes and VRFs?",
+                "invocation": "routes_all = bf.q.routes().answer().frame()\n"
+            },
+            {
+                "question": "How can I get the routing table for the 'default' VRF on border routers of AS1 using Batfish parameters?",
+                "invocation": "routes_as1border = bf.q.routes(nodes=\"/as1border/\", vrfs=\"default\").answer().frame()\n"
+            },
+            {
+                "question": "How can I get the routing table for the 'default' VRF on border routers of AS1 using Pandas filtering?",
+                "invocation": "routes_as1border = routes_all[(routes_all['Node'].str.contains('as1border')) & (routes_all['VRF'] == 'default')]\nroutes_as1border\n"
+            },
+            {
+                "question": "How can I get BGP routes in the routing table for the 'default' VRF on border routers of AS1 using Batfish parameters?",
+                "invocation": "routes_as1border_bgp = bf.q.routes(nodes=\"/as1border/\", vrfs=\"default\", protocols=\"bgp\").answer().frame()\n"
+            },
+            {
+                "question": "How can I get BGP routes in the routing table for the 'default' VRF on border routers of AS1 using Pandas filtering?",
+                "invocation": "routes_as1border_bgp = routes_all[(routes_all['Node'].str.contains('as1border')) & (routes_all['VRF'] == 'default') & (routes_all['Protocol'] == 'bgp')]\nroutes_as1border_bgp\n"
+            },
+            {
+                "question": "How can I view BGP learnt routes for ALL VRFs on ALL routers with Metric >=50 using Pandas filtering?",
+                "invocation": "routes_filtered = routes_all[(routes_all['Protocol'] == 'bgp') & (routes_all['Metric'] >= 50)]\nroutes_filtered\n"
+            },
+            {
+                "question": "How can I grab the route table entry for network 1.0.2.0/24 from all routers in all VRFs using Batfish parameters?",
+                "invocation": "routes_filtered = bf.q.routes(network=\"1.0.2.0/24\").answer().frame()\n"
+            },
+            {
+                "question": "How can I grab the route table entry for network 1.0.2.0/24 from all routers in all VRFs using Pandas filtering?",
+                "invocation": "routes_filtered = routes_all[routes_all['Network'] == \"1.0.2.0/24\"]\nroutes_filtered\n"
+            },
+            {
+                "question": "How can I get the list of nodes that have the network 1.0.2.0/24 in at least one VRF?",
+                "invocation": "routes_filtered[\"Node\"].unique()"
+            },
+            {
+                "question": "How can I retrieve the list of nodes that do not have the prefix 1.0.2.0/24 in their routing table?",
+                "invocation": "routes_filtered = routes_all.groupby('Node').filter(lambda x: all(x['Network'] != '1.0.2.0/24'))\nroutes_filtered[\"Node\"].unique()"
+            },
+            {
+                "question": "How do I check if the intended traffic is already permitted in the current snapshot?",
+                "invocation": "answer = bf.q.searchFilters(headers=change_traffic, filters=filter_name, nodes=node_name, action='permit').answer().frame()"
+            },
+            {
+                "question": "How can I compare two ACLs in different snapshots?",
+                "invocation": "answer = bf.q.compareFilters().answer(snapshot=compressed_snapshot, reference_snapshot=original_snapshot).frame()"
+            },
+            {
+                "question": "What are the differences in node-level properties between two snapshots?",
+                "invocation": "bf.q.nodeProperties(properties='NTP_Servers,Domain_Name,VRFs').answer(snapshot='snapshot', reference_snapshot='reference').frame()"
+            },
+            {
+                "question": "What are the differences in interface-level properties between two snapshots?",
+                "invocation": "bf.q.interfaceProperties(properties='Active,Description,Primary_Address').answer(snapshot='snapshot', reference_snapshot='reference').frame()"
+            },
+            {
+                "question": "What are the differences in BGP peer properties between two snapshots?",
+                "invocation": "bf.q.bgpPeerConfiguration(properties='Remote_AS,Description,Peer_Group,Import_Policy,Export_Policy').answer(snapshot='snapshot', reference_snapshot='reference').frame()"
+            },
+            {
+                "question": "What structures are defined in the configuration?",
+                "invocation": "bf.q.definedStructures().answer().frame()"
+            },
+            {
+                "question": "What are the undefined references exist?",
+                "invocation": "bf.q.undefinedReferences().answer().frame()"
+            },
+            {
+                "question": "What are the BGP adjacencies?",
+                "invocation": "bf.q.bgpEdges().answer().frame()"
+            },
+            {
+                "question": "What are the differences in ACL behavior between two snapshots?",
+                "invocation": "bf.q.compareFilters().answer(snapshot='snapshot', reference_snapshot='reference').frame()"
+            },
+            {
+                "question": "How do I extract the NTP servers configured on border routers?",
+                "invocation": "node_props = bf.q.nodeProperties(nodes=\"/border/\", properties=\"NTP_Servers\").answer().frame()"
+            },
+            {
+                "question": "How do I find nodes with no NTP servers configured?",
+                "invocation": "ns_violators = node_props[node_props[\"NTP_Servers\"].apply(lambda x: len(x) == 0)]"
+            },
+            {
+                "question": "How do I check if every node has at least one NTP server from a reference set?",
+                "invocation": "ref_ntp_servers = set([\"23.23.23.23\"])\nns_violators = node_props[node_props[\"NTP_Servers\"].apply(lambda x: len(ref_ntp_servers.intersection(set(x))) == 0)]"
+            },
+            {
+                "question": "How do I validate that every node has the reference set of NTP servers configured?",
+                "invocation": "ns_violators = node_props[node_props[\"NTP_Servers\"].apply(lambda x: ref_ntp_servers != set(x))]"
+            },
+            {
+                "question": "How do I find extra and missing NTP servers for each node compared to a reference set?",
+                "invocation": "ns_extra = node_props[\"NTP_Servers\"].map(lambda x: set(x) - ref_ntp_servers)\nns_missing = node_props[\"NTP_Servers\"].map(lambda x: ref_ntp_servers - set(x))\ndiff_df = pd.concat([node_props[\"Node\"], ns_extra.rename('extra-NTP_Servers'), ns_missing.rename('missing-NTP_Servers')], axis=1)"
+            },
+            {
+                "question": "How do I validate that each node's NTP servers match those in a per-node database?",
+                "invocation": "database_df = pd.DataFrame(data=database).transpose()\ndf_node_props = node_props.set_index('Node')\ndf_db_node_props = database_df[df_node_props.columns].copy()\ndf_node_props[\"NTP_Servers\"] = df_node_props[\"NTP_Servers\"].apply(set)\ndf_db_node_props[\"NTP_Servers\"] = df_db_node_props[\"NTP_Servers\"].apply(set)\nmissing_servers = (df_db_node_props - df_node_props).rename(columns={\"NTP_Servers\": 'missing-NTP_Servers'})\nextra_servers = (df_node_props - df_db_node_props).rename(columns={\"NTP_Servers\": 'extra-NTP_Servers'})\nresult = pd.concat([missing_servers, extra_servers], axis=1, sort=False)"
+            },
+            {
+                "question": "How do I extract interface MTU for Ethernet0/0 interfaces on border routers?",
+                "invocation": "interface_mtu = bf.q.interfaceProperties(interfaces=\"/border/[Ethernet0/0]\", properties=\"MTU\").answer().frame()"
+            }
+        ]
+    }
+}

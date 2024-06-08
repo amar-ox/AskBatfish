@@ -1,0 +1,281 @@
+{
+    "Base Types": {
+      "Edge": {
+        "node1": "str",
+        "node1interface": "str",
+        "node2": "str",
+        "node2interface": "str"
+      },
+      "Interface": {
+        "hostname": "str",
+        "interface": "str"
+      }
+    },
+    "ACL Traces": {
+      "AclTrace": {
+        "events": "List[AclTraceEvent]"
+      },
+      "AclTraceEvent": {
+        "description": "str | None"
+      },
+      "Fragment": {},
+      "LinkFragment": {
+        "text": "str",
+        "vendorStructureId": "VendorStructureId"
+      },
+      "TextFragment": {
+        "text": "str"
+      },
+      "TraceElement": {
+        "fragments": "List[Fragment]"
+      },
+      "TraceTree": {
+        "traceElement": "TraceElement",
+        "children": "List[TraceTree]"
+      },
+      "VendorStructureId": {
+        "filename": "str",
+        "structureType": "str",
+        "structureName": "str"
+      }
+    },
+    "Flows and Packets": {
+      "ArpErrorStepDetail": {
+        "outputInterface": "str | None",
+        "resolvedNexthopIp": "str | None"
+      },
+      "DelegatedToNextVrf": {
+        "nextVrf": "str",
+        "type": "str = 'DelegatedToNextVrf'"
+      },
+      "DeliveredStepDetail": {
+        "outputInterface": "str | None",
+        "resolvedNexthopIp": "str | None"
+      },
+      "Discarded": {
+        "type": "str = 'Discarded'"
+      },
+      "EnterInputIfaceStepDetail": {
+        "inputInterface": "str",
+        "inputVrf": "str | None"
+      },
+      "ExitOutputIfaceStepDetail": {
+        "outputInterface": "str",
+        "transformedFlow": "str | None"
+      },
+      "FilterStepDetail": {
+        "filter": "str",
+        "filterType": "str",
+        "inputInterface": "str",
+        "flow": "Flow | None"
+      },
+      "Flow": {
+        "srcIP": "str",
+        "dstIP": "str",
+        "srcPort": "int",
+        "dstPort": "int",
+        "ipProtocol": "str",
+        "ingressNode": "str",
+        "ingressInterface": "str",
+        "ingressVrf": "str"
+      },
+      "ForwardedIntoVxlanTunnel": {
+        "vni": "int",
+        "vtep": "str",
+        "type": "str = 'ForwardedIntoVxlanTunnel'"
+      },
+      "ForwardedOutInterface": {
+        "outputInterface": "str",
+        "resolvedNextHopIp": "str | None",
+        "type": "str = 'ForwardedOutInterface'"
+      },
+      "HeaderConstraints": {
+        "srcIps": "str | None",
+        "dstIps": "str | None",
+        "srcPorts": "str | None",
+        "dstPorts": "str | None",
+        "applications": "str | None",
+        "ipProtocols": "str | None",
+        "icmpCodes": "str | None",
+        "icmpTypes": "str | None",
+        "dscps": "str | None",
+        "ecns": "str | None",
+        "packetLengths": "str | None",
+        "fragmentOffsets": "str | None",
+        "tcpFlags": "str | None"
+      },
+      "Hop": {
+        "node": "str",
+        "steps": "List[Step]"
+      },
+      "InboundStepDetail": {
+        "interface": "str"
+      },
+      "MatchSessionStepDetail": {
+        "sessionScope": "SessionScope",
+        "sessionAction": "SessionAction",
+        "matchCriteria": "SessionMatchExpr",
+        "transformation": "List[FlowDiff] | None"
+      },
+      "MatchTcpFlags": {
+        "tcpFlags": "TcpFlags",
+        "useAck": "bool = True",
+        "useCwr": "bool = True",
+        "useEce": "bool = True",
+        "useFin": "bool = True",
+        "usePsh": "bool = True",
+        "useRst": "bool = True",
+        "useSyn": "bool = True",
+        "useUrg": "bool = True"
+      },
+      "OriginateStepDetail": {
+        "originatingVrf": "str"
+      },
+      "PathConstraints": {
+        "startLocation": "str | None",
+        "endLocation": "str | None",
+        "transitLocations": "str | None",
+        "forbiddenLocations": "str | None"
+      },
+      "RoutingStepDetail": {
+        "routes": "List[RouteInfo]",
+        "forwardingDetail": "ForwardingDetail | None",
+        "arpIp": "str | None",
+        "outputInterface": "str | None"
+      },
+      "SetupSessionStepDetail": {
+        "sessionScope": "SessionScope",
+        "sessionAction": "SessionAction",
+        "matchCriteria": "SessionMatchExpr",
+        "transformation": "List[FlowDiff] | None"
+      },
+      "TcpFlags": {
+        "ack": "bool = False",
+        "cwr": "bool = False",
+        "ece": "bool = False",
+        "fin": "bool = False",
+        "psh": "bool = False",
+        "rst": "bool = False",
+        "syn": "bool = False",
+        "urg": "bool = False"
+      },
+      "Trace": {
+        "disposition": "str",
+        "hops": "List[Hop]"
+      },
+      "TransformationStepDetail": {
+        "transformationType": "str",
+        "flowDiffs": "List[FlowDiff]"
+      }
+    },
+    "Reference Library": {
+      "AddressGroup": {
+        "name": "str",
+        "addresses": "List[str]",
+        "childGroupNames": "List[str]"
+      },
+      "InterfaceGroup": {
+        "name": "str",
+        "interfaces": "List[Interface]"
+      },
+      "NodeRole": {
+        "name": "str",
+        "regex": "str"
+      },
+      "NodeRoleDimension": {
+        "name": "str",
+        "roles": "List[NodeRole]",
+        "roleDimensionMappings": "List[RoleDimensionMapping]"
+      },
+      "NodeRolesData": {
+        "defaultDimension": "str | None",
+        "roleDimensionOrder": "List[str]",
+        "roleMappings": "List[RoleMapping]"
+      },
+      "ReferenceBook": {
+        "name": "str",
+        "addressGroups": "List[AddressGroup]",
+        "interfaceGroups": "List[InterfaceGroup]"
+      },
+      "ReferenceLibrary": {
+        "books": "List[ReferenceBook]"
+      },
+      "RoleDimensionMapping": {
+        "regex": "str",
+        "groups": "List[int]",
+        "canonicalRoleNames": "Dict[str, str]"
+      },
+      "RoleMapping": {
+        "name": "str",
+        "regex": "str",
+        "roleDimensionGroups": "Dict[str, int]",
+        "canonicalRoleNames": "Dict[str, Dict[str, str]]"
+      }
+    },
+    "Routes": {
+      "BgpRoute": {
+        "network": "str",
+        "originatorIp": "str",
+        "originType": "str",
+        "protocol": "str",
+        "asPath": "List[str]",
+        "communities": "List[str]",
+        "localPreference": "int",
+        "metric": "int",
+        "nextHopIp": "str | None",
+        "sourceProtocol": "str | None",
+        "tag": "int",
+        "weight": "int"
+      },
+      "BgpRouteConstraints": {
+        "prefix": "List[str]",
+        "complementPrefix": "bool | None",
+        "localPreference": "List[str]",
+        "med": "List[str]",
+        "communities": "List[str]",
+        "asPath": "List[str]"
+      },
+      "BgpRouteDiff": {
+        "fieldName": "str",
+        "oldValue": "str",
+        "newValue": "str"
+      },
+      "BgpRouteDiffs": {
+        "diffs": "List[BgpRouteDiff]"
+      },
+      "BgpSessionProperties": {
+        "localAs": "str",
+        "remoteAs": "str",
+        "localIp": "str",
+        "remoteIp": "str"
+      },
+      "NextHop": {},
+      "NextHopDiscard": {
+        "type": "str = 'discard'"
+      },
+      "NextHopInterface": {
+        "interface": "str",
+        "ip": "str | None",
+        "type": "str = 'interface'"
+      },
+      "NextHopIp": {
+        "ip": "str",
+        "type": "str = 'ip'"
+      },
+      "NextHopVrf": {
+        "vrf": "str",
+        "type": "str = 'vrf'"
+      },
+      "NextHopVtep": {
+        "vni": "int",
+        "vtep": "str",
+        "type": "str = 'vtep'"
+      }
+    },
+    "Miscellaneous": {
+      "FileLines": {
+        "filename": "str",
+        "lines": "List[int]"
+      }
+    }
+  }  

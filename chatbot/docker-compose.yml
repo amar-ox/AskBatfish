@@ -1,0 +1,61 @@
+version: "3"
+services:
+  batfish:
+    image: batfish/allinone
+    container_name: batfish
+    volumes:
+      - batfish-data:/data
+    ports:
+      - "8888:8888"
+      - "9997:9997"
+      - "9996:9996"
+    healthcheck:
+        test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider localhost:8888/login || exit 1"]
+        interval: 5s
+        timeout: 3s
+        retries: 5
+    networks:
+      - askbf
+  neo4j:
+    image: neo4j:latest
+    ports:
+      - 7687:7687
+      - 7474:7474
+    volumes:
+      - /tmp/neo4j/data:/data
+    environment:
+      - NEO4J_AUTH=neo4j/12345-password
+      - NEO4J_PLUGINS=["apoc","apoc-extended"]
+      - NEO4J_apoc_export_file_enabled=true
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_apoc_import_file_use__neo4j__config=true
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*,algo.*,net.*
+      - NEO4J_dbms_security_procedures_allowlist=apoc.*,algo.*,net.*
+    healthcheck:
+        test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider localhost:7474 || exit 1"]
+        interval: 5s
+        timeout: 3s
+        retries: 5
+    networks:
+      - askbf
+  app:
+    depends_on:
+      neo4j:
+        condition: service_healthy
+      batfish:
+        condition: service_started
+    develop:
+      watch:
+        - action: rebuild
+          path: .
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    networks:
+      - askbf
+volumes:
+  batfish-data:
+networks:
+  askbf:
+    driver: bridge

@@ -1,0 +1,16 @@
+chainlit==1.1.202
+jsonschema==4.22.0
+langchain==0.2.2
+langchain-community==0.2.3
+langchain-core==0.2.4
+langchain-openai==0.1.8
+langchain-mistralai==0.1.8
+langchain-google-genai==1.0.6
+neo4j==5.20.0
+openai==1.31.2
+python-dotenv==1.0.1
+tiktoken==0.7.0
+pybatfish==2023.12.16.1270
+pandas==1.5.3
+tabulate==0.9.0
+pandasai==2.1.1
