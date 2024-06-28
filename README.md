@@ -1,4 +1,4 @@
-# AskBatfish: Chat-based Network Verification and Analysis
+# AskBatfish: Chat-based Network Management and Verification
 
 AskBatfish allows you to interact with [Batfish](https://github.com/batfish/batfish) through natural language Q&A using Large Language Models (LLMs). It provides a Chatbot UI built with Chainlit and integrates LLMs via LangChain, with persistence handled by Neo4j.
 
@@ -18,20 +18,20 @@ AskBatfish allows you to interact with [Batfish](https://github.com/batfish/batf
     | NEO4J_USERNAME         | neo4j                            | **REQUIRED** - Username for Neo4j database       |
     | NEO4J_PASSWORD         | 12345-password                   | **REQUIRED** - Password for Neo4j database       |
 
-### Running the Chatbot
+### Running AskBatfish
 
-1. **Start the Chatbot**:
+1. **Build and Start** (If first time or changes have been made):
+    ```sh
+    docker compose up --build
+    ```
+
+2. **Start**:
     ```sh
     cd chatbot/
     docker compose up
     ```
 
-2. **Rebuild the Chatbot** (if changes to build scripts have been made):
-    ```sh
-    docker compose up --build
-    ```
-
-3. **Watch Mode** (auto-rebuild on file changes):
+3. **Watch Mode** (Auto-rebuild on file changes):
     - First, start everything.
     - Then, in a new terminal:
     ```sh
