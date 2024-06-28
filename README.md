@@ -23,6 +23,7 @@ AskBatfish allows you to interact with [Batfish](https://github.com/batfish/batf
 
 1. **Build and Start** (If first time or changes have been made):
     ```sh
+    cd chatbot/
     docker compose up --build
     ```
 
@@ -36,6 +37,7 @@ AskBatfish allows you to interact with [Batfish](https://github.com/batfish/batf
     - First, start everything.
     - Then, in a new terminal:
     ```sh
+    cd chatbot/
     docker compose watch
     ```
 
