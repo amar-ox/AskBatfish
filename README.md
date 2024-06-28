@@ -8,12 +8,13 @@ AskBatfish allows you to interact with [Batfish](https://github.com/batfish/batf
 
 1. **Create a `.env` File**: Generate this file based on the `env.example` template.
    
-   > **Note**: The chatbot uses `gpt-4o`. You need to generate an OpenAI API key and configure the stack in the `.env` file.
+   > **Note**: The chatbot uses `gpt-4o`. You need to generate an OpenAI API key and configure it in the `.env` file.
 
 2. **Environment Variables**:
 
     | Variable Name          | Default Value                    | Description                                      |
     |------------------------|----------------------------------|--------------------------------------------------|
+    | OPENAI_API_KEY         | None                             | **REQUIRED** - Your OpenAI API key               | 
     | NEO4J_URI              | neo4j://neo4j:7687               | **REQUIRED** - URL to Neo4j database             |
     | NEO4J_USERNAME         | neo4j                            | **REQUIRED** - Username for Neo4j database       |
     | NEO4J_PASSWORD         | 12345-password                   | **REQUIRED** - Password for Neo4j database       |
